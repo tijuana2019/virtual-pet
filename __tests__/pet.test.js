@@ -17,5 +17,13 @@ describe("growUp", () => {
     it("increments the age of pet by 1 year when it is called", () => {
         pet.growUp();
         expect(pet.age).toEqual(1);
+    });
+
+    it("increments the hunger of pet by 5 when it is called", () => {
+        expect(pet.hunger).toEqual(5);
+    });
+
+    it("decreases the fitness of pet by 3 when it is called", () => {
+        expect(pet.fitness).toEqual(7);
     })
 });
