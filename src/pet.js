@@ -47,6 +47,10 @@ Pet.prototype.checkUp = function() {
     };   
 };
 
+Pet.prototype.isAlive = function() {
+    
+}
+
 
 
 module.exports = Pet;

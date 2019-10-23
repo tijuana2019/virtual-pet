@@ -70,10 +70,23 @@ describe("checkUp", () => {
             expect(pet.checkUp()).toEqual("I am hungry");
         } else {
             expect(pet.checkUp()).toEqual("I feel great!");
-        }
-        
+        }    
     })
+});
 
+describe("isAlive", () => {
+    it("returns a boolean value to let you know if the pet is alive", () => {
+        if(pet.fitness <= 0) {
+            expect(pet.isAlive()).toEqual(false);
+        } else if(pet.hunger >= 10) {
+            expect(pet.isAlive()).toEqual(false);
+        } else if(pet.age >= 30) {
+            expect(pet.isAlive()).toEqual(false);
+        } else {
+            expect(pet.isAlive()).toEqual(true);
+        }
+    })
 })
+
 });
 
