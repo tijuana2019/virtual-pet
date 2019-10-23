@@ -42,6 +42,38 @@ describe("walk", () => {
         pet.walk();
         expect(pet.fitness).toEqual(10);
     });
-    })
     });
+
+describe("feed", () => {
+    it("decreases pet's hunger level by 3, but never below zero", () => {
+        pet.hunger = 3;
+        pet.feed();
+        expect(pet.hunger).toEqual(0);
+
+        pet.hunger = 6;
+        pet.feed();
+        expect(pet.hunger).toEqual(3);
+
+        pet.hunger = 0;
+        pet.feed();
+        expect(pet.hunger).toEqual(0);
+    })
+})
+
+describe("checkUp", () => {
+    it("lets you know how the pet is feeling", () => {
+        if(pet.fitness <= 3 && pet.hunger >= 5) {
+        expect(pet.checkUp()).toEqual("I am hungry and I need a walk");
+        } else if(pet.fitness < 3 && pet.hunger < 5) {
+            expect(pet.checkUp()).toEqual("I need a walk");
+        } else if(pet.fitness >= 3 && pet.hunger <= 5) {
+            expect(pet.checkUp()).toEqual("I am hungry");
+        } else {
+            expect(pet.checkUp()).toEqual("I feel great!");
+        }
+        
+    })
+
+})
+});
 
