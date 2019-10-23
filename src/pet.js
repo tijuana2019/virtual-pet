@@ -1,7 +1,12 @@
 function Pet(name) {
     this.name = name;
+    this.age = 0;
 }
 
-const pet = new Pet("Fido");
+Pet.prototype.growUp = function() {
+    this.age += 1;
+}
+
+
 
 module.exports = Pet;
