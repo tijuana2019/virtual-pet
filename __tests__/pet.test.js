@@ -20,10 +20,28 @@ describe("growUp", () => {
     });
 
     it("increments the hunger of pet by 5 when it is called", () => {
-        expect(pet.hunger).toEqual(5);
+       expect(pet.hunger).toEqual(5);
     });
 
     it("decreases the fitness of pet by 3 when it is called", () => {
         expect(pet.fitness).toEqual(7);
+    });
+
+    it("decreases the health of pet by 2 when it is called", () => {
+        expect(pet.health).toEqual(8);
+    }); 
+    
+describe("walk", () => {
+    it("increases fitness by 4 when called, up to a maximum fitness of 10", () => {
+        pet.fitness = 3;
+        pet.walk();
+        expect(pet.fitness).toEqual(7);
+        
+
+        pet.fitness = 6;
+        pet.walk();
+        expect(pet.fitness).toEqual(10);
+    });
     })
-});
+    });
+
